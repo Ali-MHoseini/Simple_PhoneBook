@@ -1,7 +1,13 @@
+@font-face {
+    font-family: IranSans;
+    src: url('./FontsFree-Net-ir_sans.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'IranSans';
 }
 
 html,
@@ -16,4 +22,38 @@ body {
 
 input {
     outline: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.listbox {
+    height: 35rem;
+    overflow: hidden;
+}
+
+ul {
+    color: white;
+    background-color: rgb(0, 54, 0);
+    overflow: hidden;
+}
+
+.contact__item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed wheat;
+    padding: 1rem;
+}
+
+.contact__item:last-child {
+    border: none;
+}
+
+.contact__item button {
+    padding: 0.3rem;
+    border: none;
+    outline: none;
+}
+
+.contact_btn:hover {
+    background-color: coral;
 }
