@@ -26,15 +26,15 @@ input {
     padding: 0.5rem;
 }
 
-.listbox {
-    height: 35rem;
-    overflow: hidden;
+.listItem {
+    height: 25rem;
+    overflow-y: auto;
 }
 
 ul {
     color: white;
     background-color: rgb(0, 54, 0);
-    overflow: hidden;
+
 }
 
 .contact__item {
