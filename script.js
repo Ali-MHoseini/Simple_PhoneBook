@@ -29,7 +29,7 @@ const contact = {
         const newContact = {
             name,
             number,
-            modNumber,
+            modNumber: modNumber == 1?"تلفن همراه":"تلفن ثابت",
             id: Math.floor(Math.random() *10000)
         }
 
@@ -56,6 +56,7 @@ const contact = {
         showList(newData)
     }
 }
+
 const showList = (data) => {
     contacts__list.innerHTML = "";
 
@@ -73,14 +74,18 @@ const showList = (data) => {
             <p>${item.number}</p>
             <p>${item.modNumber}</p>
             <div>
-                <button id="delete" class="contact_btn" onclick="deleteItem(${item.id})">حذف</button>
-                <button id="edit" class="contact_btn">ویرایش</button>
+                <button id="delete" class="contact_btnbtn btn btn-danger" onclick="deleteItem(${item.id})">حذف</button>
+                <button id="edit" class="contact_btn btn btn-warning">ویرایش</button>
             </div>
         </li>`
             contacts__list.appendChild(datalistItem)
         });
     }
 }
+
+( () => {
+    showList(contact.getItem())
+})()
 
 contactTel.addEventListener('input', function() {
     if(phoneModel.value ==='1') {
@@ -126,12 +131,12 @@ searchName.addEventListener('input', () => {
 
 searchModel.addEventListener('input',() => {
     const searchExp = searchModel.value;
-    if (searchExp == '1') {
-        const matchedData = contact.getItem().filter(value => value.modNumber == 1)
+    if (searchExp == 'تلفن همراه') {
+        const matchedData = contact.getItem().filter(value => value.modNumber == "تلفن همراه")
         console.log(matchedData)
         showList(matchedData);
-    }else if(searchExp == '2') {
-        const matchedData = contact.getItem().filter(value => value.modNumber == 2)
+    }else if(searchExp == 'تلفن ثابت') {
+        const matchedData = contact.getItem().filter(value => value.modNumber == "تلفن ثابت")
         showList(matchedData);
     }else {
         showList(contact.getItem())

@@ -16,7 +16,7 @@
         <h1>Welcome To PhoneBook</h1>
     </div>
     <div class="w-100 d-flex flex-lg-row flex-sm-column justify-content-sm-center justify-content-lg-center align-items-lg-center align-items-sm-center p-5 gap-4" id="container">
-        <div class="w-50 h-75 border border-1 d-flex flex-column p-4 gap-4 align-self-lg-baseline">
+        <div class="w-50 h-75 d-flex flex-column p-4 gap-4 align-self-lg-baseline rounded-5 border border-1">
             <div class=" w-75 rounded-2 bg-white p-1">
                 <label for="contactName"><i class="bi bi-person-fill cursor-po"></i></label>
                 <input type="text" name="contactName" id="contactName" class="w-75 border-0 p-1 " placeholder="نام مخاطب را وارد کنید...">
@@ -26,23 +26,26 @@
                 <input type="tel" name="contactTel" id="contactTel" class="w-75 border-0 p-1" placeholder="شماره تلفن مخاطب را وارد کنید...">
             </div>
             <div class="w-75 d-flex justify-content-between">
-                <select class=" bg-info text-white " id="phoneModel">
+                <select class=" bg-info text-white" id="phoneModel">
                     <option value="1">تلفن همراه</option>
                     <option value="2">تلفن ثابت</option>
                 </select>
                 <button class="btn w-50 h-25 btn-outline-light" id="addContact">افزودن</button>
             </div>
         </div>
-        <div class="w-50 h-50 small border border-1 position-relative">
-            <header class="position-sticky top-0 w-100 h-25 bg-info d-flex flex-lg-row justify-content-between flex-sm-column p-1 gap-2">
-                <h3 class="text-white">لیست مخاطبین</h3>
-                <select name="searchModel" id="searchModel">
-                    <option value="#" hidden>نمایش بر اساس</option>
-                    <option value="1">تلفن همراه</option>
-                    <option value="2">تلفن ثابت</option>
-                    <option value="3" selected>همه موارد</option>
-                </select>
-                <input type="text" placeholder="نام مخاطب را جستجو کنید..." id="searchName">
+        <div class="w-50 small border border-1 position-relative">
+            <header class="position-sticky top-0 w-100 bg-info d-flex flex-lg-column justify-content-between flex-sm-column align-items-lg-center p-2 gap-2">
+                <h2 class="text-white section-title">لیست مخاطبین</h2>
+                <div class="w-100 d-flex justify-content-around ">
+                    <select name="searchModel" id="searchModel">
+                        <option value="#" hidden>نمایش بر اساس</option>
+                        <option value="تلفن همراه">تلفن همراه</option>
+                        <option value="تلفن ثابت">تلفن ثابت</option>
+                        <option value="3" selected>همه موارد</option>
+                    </select>
+                    <input type="text" placeholder="نام مخاطب را جستجو کنید..." id="searchName">
+                </div>
+
             </header>
             <ul id="contacts__list" class="list-unstyled p-2 listItem" >
 
